@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+    Final Results
+{% endblock %}
+{% block content %}
+    Your payoff for this round is the average of the payoff as <b>Sender</b> and <b>Receiver</b>.<br><br>
+
+    Your payoffs in this round are {{ payoff_1 }} and {{ payoff_2 }}.<br><br>
+
+    Therefore, your payoff is {{ total_payoff }}. <br>
+    {% next_button %}
+{% endblock %}

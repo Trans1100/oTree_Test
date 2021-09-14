@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+    Results
+{% endblock %}
+{% block content %}
+    {% if player.id_in_group == 1 %}
+    You sent the <b>Receiver</b> {{ group.sent_amount }}.<br><br>
+        The <b>Receiver</b> returned {{group.sent_back_amount}}.<br><br>
+{% else %}
+    The <b>Sender</b> sent you {{ group.sent_amount }}.<br><br>
+        You returned {{group.sent_back_amount}}.<br><br>
+    {% endif %}
+    Therefore, your total payoff is {{ player.payoff}}.
+    {% next_button %}
+{% endblock %}

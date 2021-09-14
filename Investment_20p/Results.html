@@ -1,0 +1,14 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    You earned {{ Earnings }} <br>
+    Your rank is {{ Rank }} <br>
+    Your growth rate, <b>R</b>, for later rounds will be {{ Rate }} <br>
+    {% next_button %}
+
+{% endblock %}

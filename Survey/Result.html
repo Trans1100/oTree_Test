@@ -1,0 +1,16 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Final Result
+{% endblock %}
+
+{% block content %}
+    Your total result is {{ player.payoff }}. <br><br>
+
+    The amount you received from the quizzes is {{ payoff_quiz }}.<br><br>
+
+    Your total amount of tokens is {{ total }}<br><br>
+
+    Thank you for your participation!
+{% endblock %}

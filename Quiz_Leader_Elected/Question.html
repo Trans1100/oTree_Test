@@ -1,0 +1,126 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <b>Instructions for the Election Game</b>
+{% endblock %}
+{% block content %}
+    <br>
+    <b>Phase 3: The Election Game </b><br><br>
+    In this phase you will play multiple rounds of a two-part game.<br><br>
+
+    The first part of each round will be identical to the <b>Sender-Receiver game</b>
+    you played in phase 2 of today’s experiment. Players will be given {{ Constants.endowment }}
+    and then assigned to the role of sender or receiver.
+    After all participants have made their decisions,
+    they will be endowed with 10 more tokens and then assigned to play the opposite role.<br><br>
+
+    The second part of each round will be identical to the <b>Group Game</b>,
+    with one important change: <b>each group will elect the member that will act as
+    their representative using a ranked choice voting system.</b><br><br>
+
+    Each participant will be endowed with <b>{{ Constants.endowment }}</b>
+    and randomly placed into groups of 4. Same as in the Group game,
+    <b>{{ Constants.flat_invest }}</b> will be taken from each of the 3 group members
+    and placed into a <b>group account</b>.<br><br>
+
+    Each of you will make the decision regarding the amount transferred to
+    your private account from the group account <b><i>as if you are the
+    group's representative</i></b> in advance of the representative being elected.
+    When entering your decisions, you will not know whether you have been elected
+    as the group's representative. This will not be revealed to you until after
+    you make your decisions. Your decisions have no impact on whether or not you
+    are elected as the representative.<br><br>
+
+    On the next screen, you will see the amounts sent to and returned by the
+    other members of your group in the sender-receiver game, and their values of <b>R</b>.
+    They will be labeled anonymously as Player A, Player B, and Player C.
+    You will rank the other 3 members of their group, assigning <b>1</b> to the player
+    you <b>most</b> want to be the representative and <b>3</b> to the player you <b>least</b>
+    want to be the representative. When making their decision,
+    they will be given three pieces of information about each player:<br><br>
+
+    <ul>
+        <li> The amount of <b>tokens that were sent to them</b> in the trust game
+            when they were the Receiver</li><br>
+
+        <li> Of those tokens, <b>the amount of tokens they returned</b> in the
+            trust game when they were the Receiver</li><br>
+
+        <li> The <b>R</b> value that was assigned
+            to them based on the Investment game.</li><br>
+    </ul>
+
+    On the next screen, you will be able to enter your best guess about each
+    of the other players’ decisions – how much you think they will transfer to their
+    private accounts if they are the representative, and what is the probability
+    that they will transfer all the money in the group account to their private account.<br><br>
+
+    Each group member will receive 2 points for each 1st place vote, 1 point
+    for each 2nd place vote, and 0 points for each 3rd place vote. The member with
+    the most points will be the group representative. Ties will be broken randomly.<br><br>
+
+    You will play this game sequence 5 times – the sender-receiver game,
+    followed by the representative election game. After each round you will be
+    informed which member was elected the representative and the results from the round.
+    At the beginning of each round you will be randomly
+    re-matched into a new group of 4 members.<br><br>
+
+
+    <b>Summary of Election Game:</b><br><br>
+    You will play multiple rounds of the following game sequence:<br><br>
+
+    <ul>
+        <li> First you will play the <b>Sender-Receiver game
+            twice: Once as Sender, Once as Receiver</b>.</li><br>
+
+        <li> You will decide how many tokens you will transfer from
+            the group account into your private account if you are
+            selected to be the representative</li><br>
+
+        <li> Next, you will vote on who will vote on who will be the
+            representative in the <b>Election Game</b>.
+            You will be told each candidate’s <b>R</b> value
+            and their decision they last made as the <b>Receiver</b>
+            in the Sender-Receiver Game. You will be asked to guess how
+            many tokens each candidate would transfer into their private account
+            as the Representative.</li><br>
+        <li> After all players have made their decisions,
+            the representative will be selected.</li><br>
+    </ul>
+
+    <b>Reminder of Payoffs:</b><br><br>
+
+    For the three <b>members</b>, their payoff from this round is the {{ remain }}
+    remaining in their private account plus their earnings from the group account:<br><br>
+
+    <ul>
+        <li>Member payoff from their <b>private</b> account = {{ remain }}</li><br>
+        <li>Member payoff from the <b>group</b> account = (({{ total }} -
+            <i>amount taken by representative</i>) x R)/3</li><br>
+        <li>Total Member payoff = payoff from private account +
+            payoff from group account</li><br>
+    </ul>
+
+    For the <b>representative</b>, their payoff will include a {{ earning }} fee
+    for being the representative in addition to any tokens they transferred
+    from the group account into their private account:<br><br>
+
+    <ul>
+        <li>Total Representative payoff = {{ Constants.endowment }} +
+            {{ Constants.flat_earning }} +
+            the amount they transferred from the group account</li><br>
+    </ul>
+
+    <b>Quiz 4:</b><br><br>
+
+    You will receive 2 tokens for a correct answer to the following question,
+    paid separately at the end of the experiment.<br><br>
+
+    1. Member A receives 2 first place votes and 1 second place vote.
+    Member B receives 2 second place votes and 1 third place vote.
+    Member C receives 1 first place and 2 third place votes.
+    Which member will be elected the representative? {{ formfield 'answer_1'}}<br>
+
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,103 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <b>Instructions for the Group Game</b>
+{% endblock %}
+{% block content %}
+    <br>
+    <b>Phase 3: The Group Game </b><br><br>
+
+    In this round each participant will be endowed with {{ Constants.endowment }}
+    and randomly placed into groups of <b>4</b>. Within each group, 3 participants will be
+    group <b>members</b> and one will be randomly chosen to be the <b>representative</b>.
+    <b>{{ Constants.flat_invest }}</b> will be taken from each of the 3 group members
+    and placed into a <b>group account</b>.<br><br>
+
+    Every token in the group account will be multiplied by the representative’s growth
+    factor <b>R</b> and then divided equally among the 3 group members.
+    Each participant in the experiment has their own <b>R</b> value based on
+    how much their investments grew in the <b>Investment game</b>
+    in Phase 1 of today’s experiment. The <b>R</b> value for a group account
+    depends on who is randomly chosen to be the <b>representative</b>.<br><br>
+
+    Representatives will not receive any tokens from the group account.
+    Instead, they are paid a flat fee of {{ Constants.flat_earning }}.
+    The representative may also choose to transfer some tokens from
+    the group account to their own private account.
+    Tokens transferred to the representative’s private account <b>will
+    not be multiplied by R or returned to the group members</b>.<br><br>
+
+    For the three <b>members</b>, their payoff from this round is the {{ remain }}
+    remaining in their private account plus their earnings from the group account:<br><br>
+
+    <ul>
+        <li>Member payoff from their <b>private</b> account = {{ remain }}</li><br>
+        <li>Member payoff from the <b>group</b> account = (({{ total }} -
+            <i>amount taken by representative</i>) x R)/3</li><br>
+        <li>Total Member payoff = payoff from private account +
+            payoff from group account</li><br>
+    </ul>
+
+    For the <b>representative</b>, their payoff will include a {{ earning }} fee
+    for being the representative in addition to any tokens they transferred
+    from the group account into their private account:<br><br>
+
+    <ul>
+        <li>Total Representative payoff = {{ Constants.endowment }} +
+            {{ Constants.flat_earning }} +
+            the amount they transferred from the group account</li><br>
+    </ul>
+
+    Each of you will make this decision in advance <b><i>as
+    if you are the group's representative</i></b>.
+    When entering your decisions, you will not know whether you have been selected
+    as the group's representative. This will not be revealed to you until after you
+    make your decisions. Your decisions have no impact on whether or not you
+    are chosen as the representative.<br><br>
+
+    On the next screen, you will see the amounts sent to and returned by the
+    other members of your group in the sender-receiver game, and their values of <b>R</b>.
+    They will be labeled anonymously as Player A, Player B, and Player C.
+    You will be able to enter your best guess about each of the
+    other players’ decisions – how much you think they will transfer to their private accounts
+    if they are the representative, and what is the probability that they will
+    transfer all the money in the group account to their private account.<br><br>
+
+    <b>Summary of Group Game:</b><br><br>
+
+    <ul>
+        <li>You will decide how many tokens you will transfer from the
+            group account to your private account if
+            you are selected to be the representative</li><br>
+        <li>You will guess the decisions made by the other players in the group</li><br>
+        <li>After all players have made their decisions and guesses,
+            the representative will be selected.</li><br>
+    </ul>
+
+    <b>Quiz 3:</b><br><br>
+
+    You will receive 2 tokens for each complete correct answer
+    to the following questions,
+    paid separately at the end of the experiment.<br><br>
+
+    1. How many members of your group will be a
+    representative this round? {{ formfield 'answer_1' }}<br>
+
+    2. How many tokens does the group account start with? {{ formfield 'answer_2' }}<br>
+
+    3. Suppose you are selected to be the representative.
+
+    Your <b>R</b> value is 1.6 and you choose to transfer 11 tokens
+    into your private account from the group account.<br>
+
+    <ul>
+        <li>What are your total earnings from
+            the Group Game? {{ formfield 'answer_3' }}</li><br>
+
+        <li>How much do each of your group <b>members</b> earn
+            from the Group Game? {{ formfield 'answer_4' }}</li><br>
+    </ul>
+
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,68 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Investment Game
+{% endblock %}
+
+{% block content %}
+    Please fill out the answers and enter the amount you would like to invest in each option.<br><br>
+<table>
+    <tr>
+        <th></th>
+        <th></th>
+        <th>Return (r) </th>
+        <th>Probability (p)</th>
+        <th>Portfolio Allotment</th>
+    </tr>
+    {{ for i in order }}
+        {{ if i == 1 }}
+        <tr>
+            <th> Portfolio {{ order_2.pop() }} </th>
+            <th>{{ A1 }} <br> {{ A2 }}</th>
+            <td>{% formfield 'answer_r_A'  label='' %} </td>
+            <td>{% formfield 'answer_p_A'  label=''%} </td>
+            <td>{% formfield 'invest_A'  label=''%} </td>
+        </tr>
+        {{ endif }}
+        {{ if i == 2 }}
+            <tr>
+                <th> Portfolio {{ order_2.pop() }}</th>
+                <th>{{ B1 }} <br> {{ B2 }}</th>
+                <td>{% formfield player.answer_r_B label='' %} </td>
+                <td>{% formfield player.answer_p_B label='' %} </td>
+                <td>{% formfield player.invest_B label='' %} </td>
+        {{ endif }}
+            </tr>
+        {{ if i == 3 }}
+            <tr>
+                <th> Portfolio {{ order_2.pop() }} </th>
+                <th>{{ C1 }} <br> {{ C2 }}</th>
+                <td>{% formfield player.answer_r_C label=''%} </td>
+                <td>{% formfield player.answer_p_C label=''%} </td>
+                <td>{% formfield player.invest_C label=''%} </td>
+            </tr>
+        {{ endif }}
+        {{ if i == 4 }}
+            <tr>
+                <th> Portfolio {{ order_2.pop() }}</th>
+                <th>{{ D1 }} <br> {{ D2 }}</th>
+                <td>{% formfield player.answer_r_D label=''%} </td>
+                <td>{% formfield player.answer_p_D label=''%} </td>
+                <td>{% formfield player.invest_D label=''%} </td>
+            </tr>
+        {{ endif }}
+        {{ if i == 5 }}
+            <tr>
+                <th> Portfolio {{ order_2.pop() }}</th>
+                <th>{{ E1 }} <br> {{ E2 }}</th>
+                <td>{% formfield player.answer_r_E label=''%} </td>
+                <td>{% formfield player.answer_p_E label=''%} </td>
+                <td>{% formfield player.invest_E label=''%} </td>
+            </tr>
+        {{ endif }}
+    {{ endfor }}
+</table>
+    {% next_button %}
+{% endblock %}
+

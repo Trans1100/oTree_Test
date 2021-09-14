@@ -1,0 +1,11 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+    Sender Phase
+{% endblock %}
+{% block content %}
+    You are the <b>Sender</b>. Now you have {{Constants.endowment}}.<br><br>
+    How much do you want to send to the <b>Receiver?</b>
+    {% formfield group.sent_amount label='' %}
+    {% next_button %}
+{% endblock %}

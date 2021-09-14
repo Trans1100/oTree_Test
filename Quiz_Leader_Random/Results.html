@@ -1,0 +1,30 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    The number of correct answers is {{ player.correct }}.<br><br>
+
+    You earned {{ Earnings }}. <br><br>
+
+    The correct answers are:<br><br>
+
+    1. {{ Constants.sol1 }} member of your group will be the representative.<br><br>
+
+    2. The group account starts with {{ Constants.sol2 }}<br><br>
+
+    3. Suppose you are selected to be the representative.
+    Your R value is 1.6 and you choose to transfer 11 tokens
+    into your private account from the group account.<br><br>
+
+    <ul>
+        <li>Your total earnings from the Group Game are {{ Constants.sol3 }}</li><br>
+        <li>The amount each of your group members earns
+            from the Group Game is {{Constants.sol4 }}</li><br>
+    </ul>
+
+    {% next_button %}
+{% endblock %}

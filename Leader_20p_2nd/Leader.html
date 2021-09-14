@@ -1,0 +1,42 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Rank your Choice for the Representative
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td> </td>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+        </tr>
+        <tr>
+            <th> Sent</th>
+            <td>{{ sentA }} </td>
+            <td>{{ sentB }} </td>
+            <td>{{ sentC }} </td>
+        </tr>
+        <tr>
+            <th> Sent Back</th>
+            <td>{{ sent_backA }} </td>
+            <td>{{ sent_backB }} </td>
+            <td>{{ sent_backC }} </td>
+        </tr>
+        <tr>
+            <th> Rate </th>
+            <td>{{ rateA }} </td>
+            <td>{{ rateB }} </td>
+            <td>{{ rateC }} </td>
+        </tr>
+        <tr>
+            <th>Please rank your choices for representative, where 1 is your top choice: </th>
+            <td>{% formfield player.choice_A label=''%} </td>
+            <td>{% formfield player.choice_B label=''%} </td>
+            <td>{% formfield player.choice_C label=''%} </td>
+        </tr>
+    </table>
+    {% next_button %}
+{% endblock %}

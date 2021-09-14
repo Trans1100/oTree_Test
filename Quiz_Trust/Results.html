@@ -1,0 +1,33 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    The number of correct answers is {{ player.correct }}.<br><br>
+
+    You earned {{ Earnings }}. <br><br>
+
+    The correct answers are:<br><br>
+
+    In the first phase, as a Sender, you chose to transfer 6 tokens.
+    The Receiver’s account increases by: {{ Constants.sol1 }}.
+    The Receiver chooses to transfer 8 back to you.
+    Now, the amount in your account is {{ Constants.sol2 }}
+    and the amount in the Receiver’s account is {{ Constants.sol3 }}.<br><br>
+
+    As a Receiver, the Sender matched with you transferred 7 tokens to your account.
+    Your account increases by {{ Constants.sol4 }}
+    so that you now have {{ Constants.sol5 }}  tokens total in your account.<br><br>
+
+    You choose to transfer 11 tokens back to the Sender’s account.
+    The Sender now has  {{ Constants.sol6 }}  tokens
+    in their account and you have {{ Constants.sol7 }} in your account.<br><br>
+
+    At the end of this round, your earnings
+    for this round are: {{ Constants.sol8 }}.<br><br>
+
+    {% next_button %}
+{% endblock %}

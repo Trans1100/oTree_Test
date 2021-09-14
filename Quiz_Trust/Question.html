@@ -1,0 +1,80 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <b>Instructions For The Sender-Receiver game.</b>
+{% endblock %}
+{% block content %}
+    <br>
+    <b>Phase 2: Sender-Receiver Game </b><br><br>
+
+    This game has two players: a <b>sender</b> and a <b>receiver</b>.
+    You will play this game twice, once as the sender and once as the receiver.
+    Each time, both the sender and the receiver will begin
+    with {{ Constants.endowment }} in their account.
+    You will be randomly partnered with a different participant each time.
+    Neither you nor your partners will ever learn the identity of the other.<br><br>
+
+    <b>Sender Phase:</b><br><br>
+
+    As a sender, you must decide how much of their {{ Constants.endowment }} endowment
+    you want to transfer to the receiver you are matched with.
+    You may transfer between 0 to {{ Constants.endowment }},
+    <b><u>which will be tripled</u></b> and placed in the Receiver’s account.
+    For example, if you transfer 2 tokens, then 6 tokens will be added to the Receiver’s account.
+    You will have 8 tokens in your account, and the Receiver will have 6 tokens in theirs.<br><br>
+
+    <b>Receiver Phase:</b><br><br>
+
+    The <b>receiver’s</b> decision depends on how many tokens
+    the sender transferred into their account.
+    You will be shown how much your account has increased, and then make your decision.
+    You can transfer from your account, back to the <b>sender</b>,
+    any amount from 0 up to the total number of tokens in your account.
+    For example, if the <b>sender</b> transfers 2 tokens,
+    then the <b>receiver’s</b> account now has 10 + 3 x 2 = 16 tokens.
+    The Receiver can then choose to transfer between 0 and 16 tokens back to the <b>sender</b>.
+    The <b>receiver</b> will keep whatever remains in their account.<br><br>
+
+    <b>Example 1:</b><br><br>
+
+    In the Sender Phase, you choose to transfer 2 of your 10 tokens to the
+    person you are randomly matched with.<br>
+    The person you are randomly matched with sees in the <b>Receiver Phase</b>
+    that they were sent 3,
+    which is multiplied by 3 so that they have 9 tokens in their account.
+    They choose to transfer 4 back to your account.<br>
+    At the end of this round, you have 10 – 3 + 4 = 11 tokens.
+    The receiver you were matched with has 10 + 9 – 4 = 15.<br><br>
+
+    <b>Example 2:</b><br><br>
+
+    In the Receiver Phase you find out that the <b>sender</b> you are randomly matched
+    with chose to transfer 5 tokens. This 5 is multiplied by 3 so that you have 10 + 15 = 25
+    tokens in your account. You choose to transfer 6 back to the Sender.<br>
+    At the end of this round, your private account has 10 + 15 – 6 = 19 tokens.
+    The sender you were matched has 10 – 5 + 6 = 11.<br><br>
+
+    <b>Quiz 2:</b><br>
+
+    You will receive 2 tokens for each complete
+    correct answer to the following questions, paid separately
+    at the end of the experiment.<br>
+    1. In the first phase, as a Sender, you chose to transfer 6 tokens.
+    The Receiver’s account increases by: {{ formfield 'answer_1' }}
+    The Receiver chooses to transfer 8 back to you.
+    Now, the amount in your account is: {{formfield 'answer_2' }}
+    The amount in the Receiver’s account is: {{formfield 'answer_3' }}<br><br>
+
+    2. As a Receiver, the Sender matched with you transferred 7 tokens to your account.
+    Your account increases by: {{formfield 'answer_4' }}
+    You now have in your account: {{formfield 'answer_5' }}<br><br>
+
+    3. You choose to transfer 11 tokens back to the Sender’s account.
+    The Sender now has in their account:  {{formfield 'answer_6' }}
+    You now have in your account: {{formfield 'answer_7' }}<br><br>
+
+    4. At the end of this round, your earnings for this round are: {{formfield 'answer_8' }}.
+
+    {% next_button %}
+{% endblock %}

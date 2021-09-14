@@ -1,0 +1,38 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    The number of correct answers is {{ player.correct }}.<br><br>
+
+    You earned {{ Earnings }}. <br><br>
+
+    The correct answers are:<br><br>
+
+    Portfolio A has p = 0.4 and f = 3. You invest 10 tokens in Portfolio A and nothing in B or C.
+    The random number drawn by the computer is 0.3.
+    Your earnings for this round are {{ Constants.sol1 }}.<br><br>
+
+    Portfolio A has p = 0.4 and f = 3. You invest 10 tokens in Portfolio A and nothing in B or C.
+    The random number drawn by the computer is 0.8.
+    Your earnings for this round are {{ Constants.sol2 }}.<br><br>
+
+    Portfolio A has p = 0.4 and f = 3. Portfolio B has p = 0.6 and f = 2.
+    You invest 4 tokens in Portfolio A, 6 tokens in Portfolio B, and nothing in C.
+    The random number drawn by the computer for A is 0.3, and for B it is 0.4.
+    Your earnings for this round are {{ Constants.sol3 }}.<br><br>
+
+    Portfolio A has p = 0.4 and f = 3. Portfolio B has p = 0.6 and f = 2.
+    You invest 4 tokens in Portfolio A, 6 tokens in Portfolio B, and nothing in C.
+    The random number drawn by the computer for A is 0.8, and for B it is 0.4.
+    Your earnings for this round are {{ Constants.sol4 }}.<br><br>
+
+    Portfolio A has p = 0.9 and f = 4. Portfolio B has p = 0.2 and f = 1.2.
+    The portfolio that is more likely to give you a higher return
+    on your investment is {{ Constants.sol5 }}.<br><br>
+
+    {% next_button %}
+{% endblock %}

@@ -1,0 +1,48 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Beliefs about other Players
+{% endblock %}
+
+{% block content %}
+    <table>
+        <tr>
+            <td> </td>
+            <th>A</th>
+            <th>B</th>
+            <th>C</th>
+        </tr>
+        <tr>
+            <th> Sent</th>
+            <td>{{ sentA }} </td>
+            <td>{{ sentB }} </td>
+            <td>{{ sentC }} </td>
+        </tr>
+        <tr>
+            <th> Sent Back</th>
+            <td>{{ sent_backA }} </td>
+            <td>{{ sent_backB }} </td>
+            <td>{{ sent_backC }} </td>
+        </tr>
+        <tr>
+            <th> Rate </th>
+            <td>{{ rateA }} </td>
+            <td>{{ rateB }} </td>
+            <td>{{ rateC }} </td>
+        </tr>
+        <tr>
+            <th> How much do you think the player will take from the group account? </th>
+            <td>{% formfield player.about_A label=''%} </td>
+            <td>{% formfield player.about_B label=''%} </td>
+            <td>{% formfield player.about_C label=''%} </td>
+        </tr>
+        <tr>
+            <th> The probability that the player takes everything in the group account (%): </th>
+            <td>{% formfield player.prob_A label=''%} </td>
+            <td>{% formfield player.prob_B label=''%} </td>
+            <td>{% formfield player.prob_C label=''%} </td>
+        </tr>
+    </table>
+    {% next_button %}
+{% endblock %}

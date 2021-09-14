@@ -1,0 +1,118 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    <b>Instructions For The Investment Game</b>
+{% endblock %}
+{% block content %}
+    <b>Phase 1: The Investment Game</b><br><br>
+
+    <ul>
+        <li>You will have 10 tokens to invest in any of five
+            available investments: A, B, C, D, or E.</li><br>
+        <li>You may invest some, all, or none of the 10 tokens.</li><br>
+        <li>You may invest all your earnings in one of them or
+            divide them between two, three, four,
+            or all five of the investments in any way you like.</li><br>
+        <li>Remember to enter whole numbers and ensure that the
+            total across all portfolios is less than or equal to 10.</li><br>
+        <li>Enter 0 if you do not wish to invest in a given portfolio.</li><br>
+        <li>Investments may have a positive or zero return.</li><br>
+        <li>Any tokens left uninvested will be held left untouched until the end of the round,
+            without any possibility of gain or risk of loss,
+            and will then be returned to your private account.</li><br>
+        <li>Each investment is defined by two characteristics:<br><br>
+            <ul>
+                <li>The probability of a positive return, p.
+                    This is the probability that investments in it will grow.</li><br>
+                <li>Its return factor, r.
+                    This is the amount investments in the portfolio
+                    will be multiplied by if the portfolio has a positive return.</li><br>
+            </ul>
+        </li>
+    </ul>
+
+    <b>Example 1:</b><br><br>
+
+    Suppose Investment A has a 70% probability of a positive return (p = 0.70),
+    and a return factor of 2 (r = 2).<br><br>
+
+    You choose to invest 8 tokens in Investment A, leaving 2 tokens uninvested.<br><br>
+
+    The computer will draw a random number from 0 to 1.
+    If that random number is between 0 and 0.7 ( < p),
+    your investment will have a positive return.
+    Your 8 token investment will be multiplied by 2 (r),
+    leaving you with 16 tokens from your investment
+    that will be returned to your private account
+    along with the 2 tokens that you chose not to invest.<br><br>
+
+    If the random number is between 0.7 and 1(> p), your investment will return 0.
+    Your 8 token investment will be multiplied by 0,
+    leaving you with 0 tokens from your investment
+    along with the 2 tokens that you chose not to invest.
+    Your private account will now hold 2 tokens before you start the round.<br><br>
+
+    <b>Example 2:</b><br><br>
+
+    Investment A has a 60% probability of a positive return, and a return factor of 2.<br><br>
+
+    Investment B has an 80% probability of a positive return, and a return factor of 1.5.<br><br>
+
+    Investment C has a 40% probability of a positive return, and a return factor of 1.1.<br><br>
+
+    You invest 4 tokens in A, 4 tokens in B, and 2 tokens in C.<br><br>
+
+    The random number drawn for A is 0.9, so you earn zero from A.<br><br>
+
+    The random number drawn for B is 0.7, so you earn a positive return from B.<br><br>
+
+    The random number drawn for C is 0.3, so you earn a positive return from C.<br><br>
+
+    The results from your investment this round will add
+    (4 x 0) + (4 x 1.5) + (2 x 1.1) = 8.2 tokens back to your private account.<br><br>
+
+    <b>Determining p and r:</b><br><br>
+
+    You will not be told the probability, <b>p</b>, or the return factor, <b>r</b>,
+    for any of the investments.<br><br>
+
+    Instead, you will be presented with five pairs of simultaneous
+    equations with two unknown variables: <b>p</b> and <b>r</b>.<br><br>
+
+    <b>p</b> represents the probability for the relevant portfolio.
+    <b>r</b> represents the return factor.<br><br>
+
+    You will need to solve the pairs of simultaneous equations to obtain
+    the probability p and the return factor r for each investments in order to
+    decide which portfolio would be the best one to choose.<br><br>
+
+    <b>Quiz 1:</b><br><br>
+    You will receive 2 tokens for
+    each complete correct answer to the following questions,
+    paid separately at the end of the experiment<br><br>
+
+    Portfolio A has p = 0.4 and f = 3. You invest 10 tokens in Portfolio A and nothing in B or C.
+    The random number drawn by the computer is 0.3.
+    Your earnings for this round are: {{ formfield 'answer_1' }}<br>
+
+    Portfolio A has p = 0.4 and f = 3. You invest 10 tokens in Portfolio A and nothing in B or C.
+    The random number drawn by the computer is 0.8.
+    Your earnings for this round are: {{ formfield 'answer_2' }}<br>
+
+    Portfolio A has p = 0.4 and f = 3. Portfolio B has p = 0.6 and f = 2.
+    You invest 4 tokens in Portfolio A, 6 tokens in Portfolio B, and nothing in C.
+    The random number drawn by the computer for A is 0.3, and for B it is 0.4.
+    Your earnings for this round are: {{ formfield 'answer_3' }}<br>
+
+    Portfolio A has p = 0.4 and f = 3. Portfolio B has p = 0.6 and f = 2.
+    You invest 4 tokens in Portfolio A, 6 tokens in Portfolio B, and nothing in C.
+    The random number drawn by the computer for A is 0.8, and for B it is 0.4.
+    Your earnings for this round are: {{ formfield 'answer_4' }}<br>
+
+    Portfolio A has p = 0.9 and f = 4. Portfolio B has p = 0.2 and f = 1.2.
+    The portfolio that is more likely to give you a higher return
+    on your investment is (case-senstive): {{ formfield 'answer_5' }} <br>
+
+    {% next_button %}
+{% endblock %}

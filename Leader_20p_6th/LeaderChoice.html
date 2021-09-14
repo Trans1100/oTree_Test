@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Representative Choice
+{% endblock %}
+
+{% block content %}
+    Suppose you are the representative.<br><br>
+    Every group member must contribute {{ c }} tokens
+    to the group account so there are {{ 3c }} tokens in the group account. <br>
+    If you are the representative:<br><br>
+    How much would you invest?
+    {{ formfield 'invest' label='' }} <br>
+    How much would you take for yourself?
+    {{ formfield 'take_for_myself' label='' }} <br>
+    {% next_button %}
+
+{% endblock %}

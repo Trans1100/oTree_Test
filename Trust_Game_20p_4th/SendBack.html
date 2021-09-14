@@ -1,0 +1,13 @@
+{% extends "global/Page.html" %}
+{% load staticfiles otree %}
+{% block title %}
+    Receiver Phase
+{% endblock %}
+{% block content %}
+    You are the <b>Receiver</b>.<br><br>
+    The <b>Sender</b> sent you {{group.sent_amount}} and you received {{tripled_amount}}.<br><br>
+    You have a total of {{ send_back_total }}.<br><br>
+    How much do you want to send back?<br>
+    {% formfield group.sent_back_amount label="" %}
+    {% next_button %}
+{% endblock %}

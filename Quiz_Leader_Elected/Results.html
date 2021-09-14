@@ -1,0 +1,19 @@
+{% extends "global/Page.html" %}
+{% load otree static %}
+
+{% block title %}
+    Results
+{% endblock %}
+
+{% block content %}
+    The number of correct answers is {{ player.correct }}.<br><br>
+    You earned {{ Earnings }}. <br><br>
+    The correct answer is:<br><br>
+
+    Member A receives 2 first place votes and 1 second place vote.
+    Member B receives 2 second place votes and 1 third place vote.
+    Member C receives 1 first place and 2 third place votes.
+    The member will be elected is {{ Constants.sol1 }}<br><br>
+
+    {% next_button %}
+{% endblock %}
