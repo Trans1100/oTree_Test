@@ -1,6 +1,5 @@
 from otree.api import *
 import random
-import numpy
 from decimal import Decimal
 author = 'Tran_Luu'
 
