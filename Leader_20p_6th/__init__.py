@@ -17,7 +17,7 @@ class Constants(BaseConstants):
     num_rounds = 1
     endowment = cu(10)
     flat_earning = cu(5)
-    flat_invest = cu(2)
+    flat_invest = cu(4)
     prob = ['0', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50',
             '55', '60', '65', '70', '75', '80', '85', '90', '95', '100']
     about = ['0', '1', '2', '3', '4', '5', '6']
