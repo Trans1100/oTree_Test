@@ -18,7 +18,7 @@ class Constants(BaseConstants):
     sol5 = cu(31)
     sol6 = cu(14)
     sol7 = cu(20)
-    sol8 = cu(20)
+    sol8 = cu(16)
     factor = 2
     endowment = cu(10)
 
