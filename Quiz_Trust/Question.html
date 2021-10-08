@@ -9,7 +9,7 @@
     <b>Phase 2: Sender-Receiver Game </b><br><br>
 
     This game has two players: a <b>sender</b> and a <b>receiver</b>.
-    You will play this game twice, once as the sender and once as the receiver.
+    You will play this game twice, once as the sender and once as the receiver. You may play as sender first, or as receiver first. 
     Each time, both the sender and the receiver will begin
     with {{ Constants.endowment }} in their account.
     You will be randomly partnered with a different participant each time.
@@ -36,7 +36,7 @@
     As the receiver, you can choose to transfer between 0 and 16 tokens back to the <b>sender</b>.
     You will keep whatever remains in your account.<br><br>
 
-Your earnings for this round are the mean of your earnings as sender and receiver.
+Your earnings for this round are the <b>mean of your earnings as sender and receiver.</b>
 
     <b>Example 1:</b><br><br>
 
@@ -61,14 +61,15 @@ As the <b>receiver</b> you find out that the <b>sender</b> you are randomly matc
 
     You will receive 2 tokens for each complete
     correct answer to the following questions, paid separately
-    at the end of the experiment.<br>
-    1. In the first phase, as a Sender, you chose to transfer 6 tokens to the receiver.
+    at the end of the experiment.<br> 
+Suppose you play as a Sender first, and then as a Receiver. <br>
+    1. As a Sender, you choose to transfer 6 tokens to the receiver.
     The receiver’s account increases by: {{ formfield 'answer_1' }}
     The receiver chooses to transfer 8 back to you.
     Now, the amount in your account is: {{formfield 'answer_2' }}
     The amount in the receiver’s account is: {{formfield 'answer_3' }}<br><br>
 
-    2. As a Receiver, the sender you are matched with transferred 7 tokens to your account.
+    2. As a Receiver, the sender you are matched with transfers 7 tokens to your account.
     Your account increases by: {{formfield 'answer_4' }}
     You now have in your account: {{formfield 'answer_5' }}<br><br>
 
