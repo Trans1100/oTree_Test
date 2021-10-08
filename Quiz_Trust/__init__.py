@@ -16,7 +16,7 @@ class Constants(BaseConstants):
     sol3 = cu(20)
     sol4 = cu(21)
     sol5 = cu(31)
-    sol6 = cu(21)
+    sol6 = cu(14)
     sol7 = cu(20)
     sol8 = cu(16)
     factor = 2
