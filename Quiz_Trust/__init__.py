@@ -72,6 +72,7 @@ def player_correct(player: Player):
 # PAGES
 
 class Question(Page):
+    timeout_seconds = 300
     form_model = "player"
     form_fields = ['answer_1', 'answer_2', 'answer_3', 'answer_4',
                    'answer_5', 'answer_6', 'answer_7', 'answer_8']
