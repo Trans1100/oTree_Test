@@ -25,7 +25,9 @@ class Group(BaseGroup):
     pass
 
 class Player(BasePlayer):
-    answer_1 = models.StringField(label='')
+    answer_1 = models.StringField(label='',
+                                  widgets=widgets.RadioSelect,
+                                  choices=['A', 'B', 'C'])
     correct = models.IntegerField()
 
 
@@ -43,6 +45,7 @@ def player_correct(player: Player):
 # PAGES
 
 class Question(Page):
+    timeout_seconds = 240
     form_model = "player"
     form_fields = ['answer_1']
     @staticmethod
