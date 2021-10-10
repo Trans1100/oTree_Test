@@ -32,8 +32,10 @@ class Player(BasePlayer):
     answer_2 = models.CurrencyField(label='')
     answer_3 = models.CurrencyField(label='')
     answer_4 = models.CurrencyField(label='')
-    answer_5 = models.StringField(label='')
-    correct = models.IntegerField(label='')
+    answer_5 = models.StringField(label='',
+                                  widgets=widgets.RadioSelect,
+                                  choices=['A', 'B'])
+    correct = models.IntegerField()
 
 
 
@@ -62,6 +64,7 @@ class Instruction(Page):
     pass
 
 class Question(Page):
+    timeout_seconds = 300
     form_model = "player"
     form_fields = ['answer_1', 'answer_2', 'answer_3', 'answer_4', 'answer_5']
 
