@@ -66,7 +66,7 @@ class Player(BasePlayer):
     r_p_C = models.FloatField()
     r_p_D = models.FloatField()
     r_p_E = models.FloatField()
-    total_earnings = models.CurrencyField()
+#    total_earnings = models.CurrencyField()
     rank = models.IntegerField()
     rate = models.FloatField()
 
