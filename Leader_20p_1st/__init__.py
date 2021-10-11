@@ -49,9 +49,9 @@ class Player(BasePlayer):
     sent_back_A = models.CurrencyField()
     sent_back_B = models.CurrencyField()
     sent_back_C = models.CurrencyField()
-    trust_A = models.StringField()
-    trust_B = models.StringField()
-    trust_C = models.StringField()
+#    trust_A = models.StringField()
+#    trust_B = models.StringField()
+#    trust_C = models.StringField()
     rate_A = models.FloatField()
     rate_B = models.FloatField()
     rate_C = models.FloatField()
@@ -76,14 +76,14 @@ def creating_group(subsession: Subsession):
     group_5 = []
     matrix = []
     for p in subsession.get_players():
-        rank = p.participant.vars['rank'+str(p.participant.id_in_session)]
-        if rank in [1, 6, 11, 16]:
+        p.rank = p.participant.vars['rank'+str(p.participant.id_in_session)]
+        if p.rank in [1, 6, 11, 16]:
             group_1.append(p)
-        elif rank in [2, 7, 12, 17]:
+        elif p.rank in [2, 7, 12, 17]:
             group_2.append(p)
-        elif rank in [3, 8, 13, 18]:
+        elif p.rank in [3, 8, 13, 18]:
             group_3.append(p)
-        elif rank in [4, 9, 14, 19]:
+        elif p.rank in [4, 9, 14, 19]:
             group_4.append(p)
         else:
             group_5.append(p)
