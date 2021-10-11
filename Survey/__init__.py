@@ -21,8 +21,8 @@ class Subsession(BaseSubsession):
 
 
 class Group(BaseGroup):
-    random_round = models.StringField()
-
+#    random_round = models.StringField()
+    pass
 
 class Player(BasePlayer):
     payoff_quiz = models.CurrencyField()

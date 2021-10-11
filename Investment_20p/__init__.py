@@ -66,7 +66,7 @@ class Player(BasePlayer):
     r_p_C = models.FloatField()
     r_p_D = models.FloatField()
     r_p_E = models.FloatField()
-    total_earnings = models.CurrencyField()
+#    total_earnings = models.CurrencyField()
     rank = models.IntegerField()
     rate = models.FloatField()
 
@@ -130,7 +130,7 @@ class Question(Page):
     form_fields = ['invest_A', 'invest_B', 'invest_C', 'invest_D', 'invest_E',
                    'answer_p_A', 'answer_p_B', 'answer_p_C', 'answer_p_D', 'answer_p_E',
                    'answer_r_A', 'answer_r_B', 'answer_r_C', 'answer_r_D', 'answer_r_E']
-    timeout_seconds = 300
+    timeout_seconds = 240
 
     @staticmethod
     def vars_for_template(player: Player):

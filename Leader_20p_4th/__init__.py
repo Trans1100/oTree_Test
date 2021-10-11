@@ -20,7 +20,7 @@ class Constants(BaseConstants):
     flat_invest = cu(4)
     prob = ['0', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50',
             '55', '60', '65', '70', '75', '80', '85', '90', '95', '100']
-    about = ['0', '1', '2', '3', '4', '5', '6']
+    about = ['0', '1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12']
 
 
 class Subsession(BaseSubsession):
@@ -52,15 +52,15 @@ class Player(BasePlayer):
     sent_back_A = models.CurrencyField()
     sent_back_B = models.CurrencyField()
     sent_back_C = models.CurrencyField()
-    trust_A = models.StringField()
-    trust_B = models.StringField()
-    trust_C = models.StringField()
+#    trust_A = models.StringField()
+#    trust_B = models.StringField()
+#    trust_C = models.StringField()
     rate_A = models.FloatField()
     rate_B = models.FloatField()
     rate_C = models.FloatField()
-    about_A = models.CurrencyField(choices=Constants.about)
-    about_B = models.CurrencyField(choices=Constants.about)
-    about_C = models.CurrencyField(choices=Constants.about)
+    about_A = models.StringField(choices=Constants.about)
+    about_B = models.StringField(choices=Constants.about)
+    about_C = models.StringField(choices=Constants.about)
     prob_A = models.StringField(choices=Constants.prob)
     prob_B = models.StringField(choices=Constants.prob)
     prob_C = models.StringField(choices=Constants.prob)
@@ -76,14 +76,14 @@ def creating_group(subsession: Subsession):
     group_5 = []
     matrix = []
     for p in subsession.get_players():
-        rank = p.participant.vars['rank'+str(p.participant.id_in_session)]
-        if rank in [1, 7, 14, 20]:
+        p.rank = p.participant.vars['rank'+str(p.participant.id_in_session)]
+        if p.rank in [1, 7, 14, 20]:
             group_1.append(p)
-        elif rank in [2, 8, 13, 19]:
+        elif p.rank in [2, 8, 13, 19]:
             group_2.append(p)
-        elif rank in [4, 9, 12, 17]:
+        elif p.rank in [4, 9, 12, 17]:
             group_3.append(p)
-        elif rank in [3, 6, 11, 18]:
+        elif p.rank in [3, 6, 11, 18]:
             group_4.append(p)
         else:
             group_5.append(p)
