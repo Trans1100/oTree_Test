@@ -45,7 +45,7 @@ class Player(BasePlayer):
     )
     game1 = models.IntegerField(
         label='''
-        How important was the amount returned in the Sender-Receiver Game}
+        How important was the amount returned in the Sender-Receiver Game
                when choosing which group member to vote for?
                ''',
         choices=[[1, 'Not At All Important'], [2, 'Low Importance'], [3, 'Neutral'], [4, 'Somewhat Important'],
