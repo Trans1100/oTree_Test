@@ -28,7 +28,7 @@ class Constants(BaseConstants):
     question_B_2 = '2.5p + 0.5r = 2'
     question_C_1 = '-6p + 0.5r = -2.5'
     question_C_2 = '5p + 0.5r = 3'
-    question_D_1 = '11p + 0.5r = -5'
+    question_D_1 = '-11p + 0.5r = -5'
     question_D_2 = '5p + 0.5r = 3'
     question_E_1 = '-13r + 0.5p = -5.5'
     question_E_2 = '10r + 0.5p = 6'

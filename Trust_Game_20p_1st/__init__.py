@@ -27,8 +27,6 @@ class Group(BaseGroup):
 
 
 class Player(BasePlayer):
-    timeout_check_send = models.BooleanField()
-    timeout_check_sendback = models.BooleanField()
     earn_sender = models.CurrencyField()
     earn_receiver = models.CurrencyField()
     final_payoff = models.CurrencyField()
@@ -91,7 +89,6 @@ class Send(Page):
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
-            player.timeout_check_send = True
             player.group.sent_amount = cu(0)
         player.participant.vars['round1' + str(player.participant.id_in_session) + 'sent_amount'] =\
             player.group.sent_amount
@@ -118,7 +115,6 @@ class SendBack(Page):
     @staticmethod
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
-            player.timeout_check_sendback = True
             player.group.sent_back_amount = 0
         player.participant.vars['round1' + str(player.participant.id_in_session) + 'sent_back_amount'] =\
             player.group.sent_back_amount
