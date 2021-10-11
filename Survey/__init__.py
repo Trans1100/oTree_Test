@@ -62,7 +62,7 @@ class Player(BasePlayer):
         blank=True
     )
     game3 = models.IntegerField(
-        label='''How likely are you to vote in the next election?''',
+        label='''How likely are you to vote in the next Presidential election?''',
         choices=[[1, 'Very Unlikely'], [2, 'Unlikely'], [3, 'Do not know'], [4,'Likely'],
                  [5, 'Very Likely']],
         widget=widgets.RadioSelect,
