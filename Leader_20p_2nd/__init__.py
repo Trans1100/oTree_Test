@@ -223,9 +223,9 @@ class Leader(Page):
             'rateA': other_player_rate[0],
             'rateB': other_player_rate[1],
             'rateC': other_player_rate[2],
-            'sentA': other_player_sent[0],
-            'sentB': other_player_sent[1],
-            'sentC': other_player_sent[2],
+            'sentA': other_player_sent[0] * 3,
+            'sentB': other_player_sent[1] * 3,
+            'sentC': other_player_sent[2] * 3,
             'sent_backA': other_player_sent_back[0],
             'sent_backB': other_player_sent_back[1],
             'sent_backC': other_player_sent_back[2]
