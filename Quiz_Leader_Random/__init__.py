@@ -11,7 +11,7 @@ class Constants(BaseConstants):
     name_in_url = 'Quiz_Leader_Random'
     players_per_group = None
     num_rounds = 1
-    flat_earning = cu(5)
+    flat_earning = cu(8)
     flat_invest = cu(9)
     endowment = cu(10)
     sol1 = 1
