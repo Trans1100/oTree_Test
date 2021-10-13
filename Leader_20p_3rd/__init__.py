@@ -131,7 +131,7 @@ def set_pay_off(player: Player):
         player.payoff = Constants.endowment + Constants.flat_earning + player.group.take_for_myself
     if player.role_player == 'Member':
         player.payoff = Constants.endowment - Constants.flat_invest +\
-                        (player.group.invest * (player.group.rate - 1) - player.group.take_for_myself)/3
+                        (player.group.invest * player.group.rate )/3
     return player.payoff
 
 
