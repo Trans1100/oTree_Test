@@ -30,8 +30,8 @@ class Constants(BaseConstants):
     question_C_2 = '5p + 0.5r = 3'
     question_D_1 = '-11p + 0.5r = -5'
     question_D_2 = '5p + 0.5r = 3'
-    question_E_1 = '-13r + 0.5p = -5.5'
-    question_E_2 = '10r + 0.5p = 6'
+    question_E_1 = '-13p + 0.5r = -5.5'
+    question_E_2 = '10p + 0.5r = 6'
     endowment = cu(10)
     order = [1, 2, 3, 4, 5]
     order_2 =['E', 'D', 'C', 'B', 'A']
