@@ -12,7 +12,7 @@ class Constants(BaseConstants):
     players_per_group = None
     num_rounds = 1
     flat_earning = cu(5)
-    flat_invest = cu(4)
+    flat_invest = cu(9)
     endowment = cu(10)
     sol1 = 1
     sol2 = flat_invest * 3
