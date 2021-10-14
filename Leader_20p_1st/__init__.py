@@ -16,7 +16,7 @@ class Constants(BaseConstants):
     players_per_group = 4
     num_rounds = 1
     endowment = cu(10)
-    flat_earning = cu(5)
+    flat_earning = cu(8)
     flat_invest = cu(4)
     prob = ['0', '5', '10', '15', '20', '25', '30', '35', '40', '45', '50',
            '55', '60', '65', '70', '75', '80', '85', '90', '95', '100']
