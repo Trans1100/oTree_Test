@@ -90,8 +90,7 @@ class Send(Page):
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
             player.group.sent_amount = cu(0)
-        player.participant.vars['round1' + str(player.participant.id_in_session) + 'sent_amount'] =\
-            player.group.sent_amount
+        
 
 
 class SendBack(Page):
@@ -116,8 +115,11 @@ class SendBack(Page):
     def before_next_page(player: Player, timeout_happened):
         if timeout_happened:
             player.group.sent_back_amount = 0
+        player.participant.vars['round1' + str(player.participant.id_in_session) + 'sent_amount'] =\
+            player.group.sent_amount
         player.participant.vars['round1' + str(player.participant.id_in_session) + 'sent_back_amount'] =\
             player.group.sent_back_amount
+        
 
 class WaitForP1(WaitPage):
     title_text = 'Please wait for other participants to finish making decisions!'
